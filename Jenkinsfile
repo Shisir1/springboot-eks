@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/<repo>/springboot-eks-project.git'
+                git branch: 'main', url: 'https://github.com/Shisir1/springboot-eks.git'
                 }
         }
 
