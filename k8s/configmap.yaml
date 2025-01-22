@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: springboot-eks-config
+data:
+  app.properties: |
+    logging.level.org.springframework=DEBUG

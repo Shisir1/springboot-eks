@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: springboot-eks-app
+  labels:
+    app: springboot-eks-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: springboot-eks-app
+  template:
+    metadata:
+      labels:
+        app: springboot-eks-app
+    spec:
+      containers:
+        - name: springboot-eks-app
+          image: springboot-eks-app:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: "dev"
